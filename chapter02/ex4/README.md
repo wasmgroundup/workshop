@@ -1,6 +1,4 @@
-# Exercise 4
-
-Implementing an interpreter
+# Exercise 4: Implementing an interpreter
 
 ## Description
 
@@ -24,7 +22,8 @@ const grammarDef = `
     //+ "42", "1", "66 + 99", "1 + 2 - 3"
     //- "abc"
   }
-`;```
+`;
+```
 
 ## Resources
 

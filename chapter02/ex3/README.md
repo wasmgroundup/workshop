@@ -1,6 +1,4 @@
-# Exercise 3
-
-Writing a Compiler with Ohm
+# Exercise 3: Writing a Compiler with Ohm
 
 ## Description
 

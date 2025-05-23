@@ -1,6 +1,4 @@
-# Exercise 4
-
-Implementing the `toWasm` operation
+# Exercise 5: Implementing the `toWasm` operation
 
 ## Description
 
