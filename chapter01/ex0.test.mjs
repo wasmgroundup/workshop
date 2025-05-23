@@ -1,8 +1,8 @@
-import test from 'node:test';
-import assert from 'node:assert';
-import fs from 'node:fs/promises';
+import test from "node:test";
+import assert from "node:assert";
+import fs from "node:fs/promises";
 
-test('Instantiate add.wasm and call exported functions', async () => {
+test("Instantiate add.wasm and call exported functions", async () => {
   const bytes = await fs.readFile("add.wasm");
   // TODO
 

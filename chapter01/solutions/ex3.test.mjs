@@ -1,20 +1,20 @@
-import test from 'node:test';
-import assert from 'node:assert';
+import test from "node:test";
+import assert from "node:assert";
 
-test('compile result compiles to a WebAssembly object', async () => {
+test("compile result compiles to a WebAssembly object", async () => {
   const mod = module([
     typesec([functype([], [])]),
     funcsec([typeidx(0)]),
-    exportsec([export_('main', exportdesc.func(0))]),
+    exportsec([export_("main", exportdesc.func(0))]),
     codesec([code(func([], [instr.end]))]),
   ]).flat(Infinity);
 
-  const {instance} = await WebAssembly.instantiate(Uint8Array.from(mod));
+  const { instance } = await WebAssembly.instantiate(Uint8Array.from(mod));
 
   assert.strictEqual(
     instance instanceof WebAssembly.Instance,
     true,
-    'instance instanceof Instance',
+    "instance instanceof Instance",
   );
   assert.equal(instance.exports.main(), undefined);
 });
@@ -26,7 +26,7 @@ function stringToBytes(s) {
 
 function magic() {
   // [0x00, 0x61, 0x73, 0x6d]
-  return stringToBytes('\0asm');
+  return stringToBytes("\0asm");
 }
 
 function version() {
@@ -82,8 +82,6 @@ function codesec(codes) {
 const instr = {
   end: 0x0b,
 };
-
-// ex3
 
 const SECTION_ID_EXPORT = 7;
 
