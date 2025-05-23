@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@wasmgroundup/emit": "^1.0.2",
+    "ohm-js": "^17.1.0"
+  }
+}

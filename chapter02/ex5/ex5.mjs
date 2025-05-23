@@ -22,32 +22,7 @@ const wafer = ohm.grammar(grammarDef);
 
 const semantics = wafer.createSemantics();
 semantics.addOperation('toWasm', {
-  Main(expr) {
-    return [expr.toWasm(), w.instr.end];
-  },
-  Expr(num, iterOps, iterOperands) {
-    const bcFrag = [num.toWasm()];
-    for (let i = 0; i < iterOps.numChildren; i++) {
-      const op = iterOps.child(i);
-      const operand = iterOperands.child(i);
-      bcFrag.push(operand.toWasm(), op.toWasm());
-    }
-    return bcFrag;
-  },
-  op(_ch) {
-    switch (this.sourceString) {
-      case '+':
-        return [w.instr.i32.add];
-      case '-':
-        return [w.instr.i32.sub];
-      default:
-        throw new Error(`Unknown operator: ${this.sourceString}`);
-    }
-  },
-  number(_digits) {
-    const jsValue = parseInt(this.sourceString, 10);
-    return [w.instr.i32.const, w.i32(jsValue)];
-  },
+  // TODO
 });
 
 function compile(input) {
@@ -74,5 +49,4 @@ function loadMod(bytes) {
 test('toWasm', () => {
   const evalWasm = input => loadMod(compile(input)).main();
   assert.equal(evalWasm('42'), 42);
-  assert.equal(evalWasm('1 + 2 - 33'), 1 + 2 - 33);
 });
