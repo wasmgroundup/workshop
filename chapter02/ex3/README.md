@@ -7,9 +7,6 @@ Writing a Compiler with Ohm
 - Use the Ohm Editor to implement a simple calculator language, that can represent expressions like `66 + 99` and `1 + 2 - 3`.
 - Write a test that instantiates the grammar and verifies a few small examples.
 
-Bonus:
-- Write a `textExtractedExamples` function that uses `extractExamples` (part of the Ohm Extras module)
-
 ```
 Wafer {
   Main = Expr
@@ -22,6 +19,10 @@ Wafer {
   //- "abc"
 }
 ```
+
+**Bonus:**
+- Write a `textExtractedExamples` function that uses `extractExamples` (part of the Ohm Extras module)
+
 
 ## Resources
 
