@@ -3,6 +3,11 @@ import assert from "node:assert";
 
 function compile(code) {
   // Fail if the string is any value other than the empty string
+  return module([]);
+}
+
+function module(sections) {
+  assert.equal(sections.length, 0);
   // Return an array of bytes with the smallest module possible
 }
 

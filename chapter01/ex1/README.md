@@ -1,4 +1,12 @@
+# Task
+
+- Write a function called `compile` that takes a string as argument
+- Fail if the string is any value other than the empty string
+- Return an array of bytes with the smallest module possible
+
 # Resources
+
+- [DataView](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
 
 - [5.5.15. Binary Format: Modules](https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/#modules%E2%91%A0%E2%93%AA)
 - [Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)
