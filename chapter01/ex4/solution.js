@@ -1,7 +1,7 @@
 const SECTION_ID_FUNCTION = 3;
 
 function funcsec(typeidxs) {
-  return section(SECTION_ID_FUNCTION, vec(typeidxs));
+  return w.section(SECTION_ID_FUNCTION, w.vec(typeidxs));
 }
 
 function typeidx(x) {
@@ -16,9 +16,9 @@ function code(func) {
 }
 
 function func(locals, body) {
-  return [vec(locals), body];
+  return [w.vec(locals), body];
 }
 
 function codesec(codes) {
-  return section(SECTION_ID_CODE, vec(codes));
+  return w.section(SECTION_ID_CODE, w.vec(codes));
 }
