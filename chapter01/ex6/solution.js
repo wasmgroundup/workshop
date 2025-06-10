@@ -22,5 +22,6 @@ function compileExpr(expr) {
             );
         }
       }
-    });
+    })
+    .concat([w.instr.end]);
 }
