@@ -3,6 +3,9 @@ import assert from "node:assert";
 
 function compile(code) {
   // Fail if the string is any value other than the empty string
+  // header:
+  // - magic number: '\0asm'
+  // - binary format version: 1 (32 bit little endian integer)
   return module([]);
 }
 

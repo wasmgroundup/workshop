@@ -1,9 +1,3 @@
-# Task
-
-- Write a function called `compile` that takes a string as argument
-- Fail if the string is any value other than the empty string
-- Return an array of bytes with the smallest module possible
-
 # Resources
 
 - [DataView](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView)
