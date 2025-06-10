@@ -2,19 +2,31 @@ import test from "node:test";
 import assert from "node:assert";
 import * as w from "@wasmgroundup/emit";
 
-function typesec(types) {
-  return [
-    1, // Section identifier
-    4, // Section size in bytes
-    1, // Number of entries that follow
-    ...types,
-  ];
+const { u32 } = w;
+
+function section(id, contents) {
+  const sizeInBytes = contents.flat(Infinity).length;
+  return [id, u32(sizeInBytes), contents];
 }
 
-function functype(params, returns) {
-  assert.equal(params.length, 0);
-  assert.equal(returns.length, 0);
-  // Return an array of bytes that represents a function with no params and no returns
+function vec(elements) {
+  return [u32(elements.length), elements];
+}
+
+const SECTION_ID_TYPE = 1;
+
+function typesec(functypes) {
+  return section(SECTION_ID_TYPE, vec(functypes));
+}
+
+function functype(paramTypes, resultTypes) {
+  // hint: use `vec`
+  return [
+    // type section - entry
+    0x60, // Type `function`
+    0, // Empty vector of parameters
+    0, // Empty vector of return values
+  ];
 }
 
 test("compile result compiles to a WebAssembly object", async () => {

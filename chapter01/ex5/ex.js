@@ -2,6 +2,8 @@ import test from "node:test";
 import assert from "node:assert";
 import * as w from "@wasmgroundup/emit";
 
+const { u32 } = w;
+
 function exportsec(exports) {
   return [
     // ----- export section -----

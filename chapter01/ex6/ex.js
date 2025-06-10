@@ -5,8 +5,10 @@ import * as w from "@wasmgroundup/emit";
 function compileExpr(expr) {
   // Implement a compiler that takes an expression in reverse polish notation and returns
   // the body of a wasm function, the language only allows integers and basic arithmetic operations:
-  // + - * /
-  // Note: division should return an integer
+  // + (i32.add)
+  // - (i32.sub)
+  // * (i32.mul)
+  // / (i32.div_s)
   return [w.instr.i32.const, w.i32(42), w.instr.end];
 }
 
@@ -38,4 +40,9 @@ test("compile result compiles to a WebAssembly object", async () => {
   await testExpr("42", 42);
   await testExpr("10 32 +", 42);
   await testExpr("10 37 + 5 -", 42);
+
+  // TODO: uncomment
+  // await testExpr("43", 43);
+  // await testExpr("10 34 +", 44);
+  // await testExpr("10 37 + 6 -", 41);
 });

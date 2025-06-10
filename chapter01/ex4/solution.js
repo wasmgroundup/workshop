@@ -1,31 +1,24 @@
+const SECTION_ID_FUNCTION = 3;
+
 function funcsec(typeidxs) {
-  return [
-    // ----- function section -----
-    3, // Section identifier
-    2, // Section size in bytes
-    1, // Number of entries that follow
-    ...typeidxs,
-  ];
+  return section(SECTION_ID_FUNCTION, vec(typeidxs));
 }
+
 function typeidx(x) {
-  return x;
+  return u32(x);
 }
+
+const SECTION_ID_CODE = 10;
+
 function code(func) {
-  return func;
+  const sizeInBytes = func.flat(Infinity).length;
+  return [u32(sizeInBytes), func];
 }
+
 function func(locals, body) {
-  return [
-    // code section - entry 0
-    2, // Entry size in bytes
-    0, // Empty vector of local variables
-    11, // `end` instruction
-  ];
+  return [vec(locals), body];
 }
+
 function codesec(codes) {
-  return [
-    // ----- code section -----
-    10, // Section identifier
-    4, // Section size in bytes
-    1, // Number of entries that follow
-  ];
+  return section(SECTION_ID_CODE, vec(codes));
 }

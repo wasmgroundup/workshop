@@ -5,6 +5,13 @@ import * as w from "@wasmgroundup/emit";
 function typesec(types) {
   assert.equal(types.length, 0);
   // Return an array of bytes that represents an empty type section
+  return [
+    // ----- type section -----
+
+    ?, // Section identifier
+    ?, // Section size in bytes
+    ?, // Number of entries that follow
+  ];
 }
 
 test("compile result compiles to a WebAssembly object", async () => {
