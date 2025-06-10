@@ -3,15 +3,15 @@ import assert from "node:assert";
 
 function compile(code) {
   // Fail if the string is any value other than the empty string
-  // header:
-  // - magic number: '\0asm'
-  // - binary format version: 1 (32 bit little endian integer)
   return module([]);
 }
 
 function module(sections) {
   assert.equal(sections.length, 0);
   // Return an array of bytes with the smallest module possible
+  // header:
+  // - magic number: '\0asm'
+  // - binary format version: 1 (32 bit little endian integer)
 }
 
 test("compile result compiles to a WebAssembly object", async () => {
