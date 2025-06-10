@@ -5,7 +5,7 @@ function typesec(types) {
     // ----- type section -----
 
     1, // Section identifier
-    1, // Section size in bytes
-    0, // Number of entries that follow
+    w.u32(1), // Section size in bytes
+    w.u32(types.length), // Number of entries that follow
   ];
 }
